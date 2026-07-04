@@ -105,11 +105,13 @@ android {
 
     ndkVersion = "25.2.9519653"
 
-    externalNativeBuild {
-        ndkBuild {
-            path = file("src/main/jni/Android.mk")
-        }
-    }
+    // Disabled for ARM64 phone compilation - native C++ build not supported on ARM devices
+    // Re-enable this when building on x86_64 Linux/Windows/Mac
+    // externalNativeBuild {
+    //     ndkBuild {
+    //         path = file("src/main/jni/Android.mk")
+    //     }
+    // }
 
     packaging {
         jniLibs {
