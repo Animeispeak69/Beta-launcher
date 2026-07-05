@@ -117,6 +117,8 @@ android {
         jniLibs {
             useLegacyPackaging = true
             pickFirsts += listOf("**/libbytehook.so")
+            // Don't strip debug symbols on ARM64 - llvm-strip not available
+            doNotStrip.add("**/*.so")
         }
     }
 
